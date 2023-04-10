@@ -1,0 +1,1 @@
+"./PaLFI Demo.obj" "./SPI_LowLevel.obj" "./SPI_Stack.obj" "../lnk_msp430g2452.cmd" -l"libc.a" 
