@@ -43,38 +43,33 @@
 #define WDT_HOLD()          (WDTCTL = WDTPW+WDTCNTCL+WDTHOLD)
 
 struct
-_st_TRP_CONTENT
-{
-  unsigned char ucPCU_Mode;			// Defines in MSP_Access or Push Button Command
-  unsigned char Command;
-  unsigned char SerialNumber[4];	// Serial Number + Manu Code Page3
-  unsigned char KeyNumber;	      	// equal to User data 1/Page 2
-  unsigned char SelectiveAddress;	// Page 1, in eZ430-PaLFI locked to FF
-  unsigned char PushButtonMask;		// Page 18
-  unsigned char RollingCode[5];		// Page 55, not important
+    _st_TRP_CONTENT {
+    unsigned char ucPCU_Mode;			// Defines in MSP_Access or Push Button Command
+    unsigned char Command;
+    unsigned char SerialNumber[4];	// Serial Number + Manu Code Page3
+    unsigned char KeyNumber;	      	// equal to User data 1/Page 2
+    unsigned char SelectiveAddress;	// Page 1, in eZ430-PaLFI locked to FF
+    unsigned char PushButtonMask;		// Page 18
+    unsigned char RollingCode[5];		// Page 55, not important
 };
 
-union unChar2Int
-{
-unsigned char ucChar[2];
-unsigned int  uiInt;
+union unChar2Int {
+    unsigned char ucChar[2];
+    unsigned int  uiInt;
 };
 
-struct _stByteRC
-{
-  unsigned char  ucData[5];
+struct _stByteRC {
+    unsigned char  ucData[5];
 };
 
-struct _stLongRC
-{
-  unsigned long  ulLong;
-  unsigned char  ucChar;
+struct _stLongRC {
+    unsigned long  ulLong;
+    unsigned char  ucChar;
 };
 
-union _unRC
-{
-struct _stByteRC stCharRC;
-struct _stLongRC stLongRC;
+union _unRC {
+    struct _stByteRC stCharRC;
+    struct _stLongRC stLongRC;
 };
 
 /******************************************************************************/
